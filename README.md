@@ -1,3 +1,5 @@
+              ![image](https://user-images.githubusercontent.com/73891186/235721379-4c9a1e2a-6773-4757-b538-3979679a8c5e.png)     
+
 Bu projede, doktor-hasta etkileşimli bir ilaç hatırlatıcısı yapmak hedeflenmiştir. Alzheimer hastası kişiye, doktorun sisteme girdiği ilacı sisteme girilen saatte içmesine yardım edilmesi için yapılan bir uygulamadır. Alınması gereken ilaç için doktorun istediği saatte hastaya bildirim gidecektir. Hasta, bu ilacı içtiğine dair video kaydını doktora gönderebilecektir. 
 
 
