@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RemindMe.PatientMyProfilePage"
+             xmlns:CI="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             Title="Profilim">
+    <ContentPage.Content>
+        <StackLayout >
+            <StackLayout.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="DarkGreen" Offset="0.05"/>
+                    <GradientStop Color="#28AB28" Offset="0.18"/>
+                    <GradientStop Color="#BFFFBF" Offset="0.27"/>
+                    <GradientStop Color="#BFFFBF" Offset="0.7"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </StackLayout.Background>
+            <Frame BackgroundColor="Transparent" HeightRequest="120">
+                <StackLayout Orientation="Horizontal">
+                    <CI:CircleImage Source="{Binding ImageURL}" Aspect="AspectFill" HeightRequest="80" Rotation="270"/>
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                        <Label Text="{Binding Ad_Soyad}" HorizontalOptions="Center" TextColor="White" FontSize="Large"/>
+                        <Label Text="{Binding TCKNO}" TextColor="White" FontSize="Large" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame Margin="20,100,20,0" BorderColor="DarkSeaGreen" CornerRadius="25" BackgroundColor="#E1F3FF">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center" >
+                    <Label FontSize="22" FontAttributes="Italic"  VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding CV}"></Label>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

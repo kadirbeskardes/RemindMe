@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RemindMe.RootPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
+            <Frame BorderColor="AliceBlue" CornerRadius="20" BackgroundColor="LightBlue">
+                <StackLayout>
+                    <ImageButton Clicked="Doctor_Clicked" HorizontalOptions="Start" WidthRequest="100" HeightRequest="100" BackgroundColor="Transparent" Source="doctor.png"/>
+                    <Label Text="Doktor" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+            </Frame>
+            <Frame BorderColor="AliceBlue" CornerRadius="20" BackgroundColor="LightGreen">
+                <StackLayout>
+                    <ImageButton Clicked="Patient_Clicked"  HorizontalOptions="End" WidthRequest="100" HeightRequest="100"  BackgroundColor="Transparent" Source="medical.png"></ImageButton>
+                    <Label Text="Hasta" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+            </Frame>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

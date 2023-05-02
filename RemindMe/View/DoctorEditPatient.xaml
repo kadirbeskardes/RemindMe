@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="RemindMe.DoctorEditPatient" xmlns:CI="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             Title="Hasta Düzenle">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="#0022CB" Offset="0.05"/>
+                    <GradientStop Color="#3D7EFF" Offset="0.20"/>
+                    <GradientStop Color="LightBlue" Offset="0.35"/>
+                    <GradientStop Color="LightBlue" Offset="0.7"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </StackLayout.Background>
+            <StackLayout>
+                <Frame BackgroundColor="Transparent" HeightRequest="110">
+                    <StackLayout Orientation="Horizontal">
+                <CI:CircleImage  Source="{Binding ImageURL}" Rotation="270"></CI:CircleImage>
+                <StackLayout VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                    <Label FontAttributes="Bold" TextColor="White" Text="{Binding Ad_Soyad}" FontSize="Large"/>
+                            <Label Text="{Binding TCKNO}" TextColor="White" FontSize="Large" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+            </StackLayout>
+                </Frame>
+            </StackLayout>
+            <Frame BackgroundColor="Transparent" HeightRequest="0">
+                
+            </Frame>
+            <Frame HorizontalOptions="Center" Padding="30,20,30,20" BorderColor="Black" CornerRadius="30" BackgroundColor="#DDDFDD">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalTextAlignment="Center" FontAttributes="Bold" Text="İlacin ismini girin:"></Label>
+                        <Entry x:Name="isim" VerticalOptions="Center" WidthRequest="168"></Entry>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label VerticalTextAlignment="Center" FontAttributes="Bold" Text="İlacin kullanılacağı saati seçin:"></Label>
+                        <TimePicker x:Name="saat" VerticalOptions="Center"></TimePicker>
+                    </StackLayout>
+                    <Button Text="Ekle" Clicked="saatEkle"></Button>
+                </StackLayout>
+            </Frame>
+
+            <Frame Margin="15,10,15,0" BorderColor="DarkGreen" CornerRadius="20">
+                <StackLayout>
+                    <Label x:Name="noMedicine" Text="Kayıtlı ilaç yok." VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <ListView x:Name="lsviewilac" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Label Grid.Column="0" FontAttributes="Bold" FontSize="19" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding IlacAd}"/>
+                                    <Label Grid.Column="1" FontAttributes="Bold" FontSize="19" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding IlacSaat}" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            </Frame>
+            
+            <StackLayout Orientation="Horizontal">
+                <Label VerticalTextAlignment="Center" Text="Hastanızın durumunu giriniz:"/>
+                <Entry Text="{Binding Status}" x:Name="Status" WidthRequest="150" Placeholder="Durum..."/>
+            </StackLayout>
+            <Button Text="Değişiklikleri uygula." Clicked="degistir"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

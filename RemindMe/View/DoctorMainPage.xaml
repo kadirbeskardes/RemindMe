@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RemindMe.DoctorMainPage"
+            xmlns:local="clr-namespace:RemindMe"
+            Title="Menu"
+            >
+
+    <FlyoutPage.Flyout >
+        <local:DoctorFlyoutPageItem x:Name="DoctorFlyout"/>
+    </FlyoutPage.Flyout>
+    
+    <FlyoutPage.Detail>
+        <NavigationPage >
+            <x:Arguments>
+                <local:DoctorMyPatientPage/>
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>

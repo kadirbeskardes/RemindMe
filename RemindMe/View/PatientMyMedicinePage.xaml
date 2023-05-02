@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RemindMe.PatientMyMedicinePage"
+             Title="İlaçlarım"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="DarkGreen" Offset="0.05"/>
+                    <GradientStop Color="#28AB28" Offset="0.18"/>
+                    <GradientStop Color="#BFFFBF" Offset="0.27"/>
+                    <GradientStop Color="#BFFFBF" Offset="0.7"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </StackLayout.Background>
+
+            <Frame BackgroundColor="Transparent" HeightRequest="200">
+                <StackLayout Orientation="Horizontal" Spacing="60" HorizontalOptions="Center" >
+                    <Image WidthRequest="100" Source="medicine.png"/>
+                    <Image WidthRequest="100" Source="alarmclock.png"/>
+                </StackLayout>
+            </Frame>
+            <Frame BorderColor="DarkGreen" BackgroundColor="#DEFFDE" CornerRadius="20" Margin="30,20">
+                <StackLayout Margin="15,10">
+                    <ListView x:Name="lsviewilac" SelectionMode="Single">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Label Grid.Column="0" FontAttributes="Bold" FontSize="19" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding IlacAd}"/>
+                                        <Label Grid.Column="1" FontAttributes="Bold" FontSize="19" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding IlacSaat}" />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RemindMe.PatientCreate">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#C4FFCE">
+            <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BorderColor="Black" CornerRadius="25" BackgroundColor="LightGreen">
+                <StackLayout>
+                    <ScrollView>
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Image x:Name="foto" WidthRequest="100" HorizontalOptions="Center" Source="defaultDocx">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                Tapped="OnTapGestureRecognizerTapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="TCKNO:" FontSize="18" FontAttributes="Bold" TextDecorations="Underline" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="tckno" Keyboard="Numeric" HorizontalOptions="End" WidthRequest="180"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Ad:" FontSize="18" FontAttributes="Bold" TextDecorations="Underline" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="ad" HorizontalOptions="End" WidthRequest="180"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Soyad:" FontSize="18" FontAttributes="Bold" TextDecorations="Underline" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="soyad" HorizontalOptions="End" WidthRequest="180"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Doğum tarihi:" FontSize="18" FontAttributes="Bold" TextDecorations="Underline" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+                    <DatePicker  x:Name="birth" HorizontalOptions="End" WidthRequest="180"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Telefon numarası:" FontSize="18" FontAttributes="Bold" TextDecorations="Underline" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="telno" Keyboard="Telephone" HorizontalOptions="End" WidthRequest="180"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="E-Mail:" FontSize="18" FontAttributes="Bold" TextDecorations="Underline" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="email" Keyboard="Email" HorizontalOptions="End" WidthRequest="180"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Şifre:" FontSize="18" FontAttributes="Bold" TextDecorations="Underline" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="sifre" Keyboard="Text"  HorizontalOptions="End" WidthRequest="180"/>
+                </StackLayout>
+                    <Label Text="Kendinizi anlatan kısa bir metin yazınız..." HorizontalTextAlignment="Center" FontSize="18"></Label>
+                            <Editor BackgroundColor="#D5FFCA" x:Name="cv" Placeholder="Sen kimsin..." HeightRequest="150" FontSize="16"></Editor>
+                </StackLayout>
+                </ScrollView>
+                <Button Margin="0,25,0,0"  Text="Yeni kayıt oluştur." Clicked="yeni_kayit"/>
+        </StackLayout>
+        </Frame>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

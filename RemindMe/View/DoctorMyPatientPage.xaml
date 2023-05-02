@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RemindMe.DoctorMyPatientPage"
+             Title="Hastalarım"
+             xmlns:CI="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+
+    <StackLayout Orientation="Vertical" BackgroundColor="LightBlue">
+        <SearchBar  Placeholder="Hasta Ara..." TextChanged="Search_Patient"/>
+        <StackLayout Orientation="Horizontal" Margin="10,30" VerticalOptions="StartAndExpand">
+            <ListView x:Name="lsview" RowHeight="102" HasUnevenRows="True" SelectionMode="None" IsPullToRefreshEnabled="True" ItemSelected="ListView_ItemSelected" ItemTapped="LV_ItemTapped" Refreshing="refresh_list" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="102">
+                            <Frame BorderColor="Black" CornerRadius="15" BackgroundColor="#DFF0FF">
+                                <StackLayout Orientation="Horizontal">
+                                    <CI:CircleImage  Rotation="270" Source="{Binding ImageURL}" Aspect="AspectFill" HeightRequest="70"/>
+                                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Spacing="0">
+                                        <Label TextColor="Black" Text="{Binding Ad_Soyad}" FontSize="Medium" FontAttributes="Bold"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding TCKNO}" FontSize="12" FontAttributes="None"/>
+                                            <Label Text="{Binding Status}" FontSize="12" FontAttributes="None"/>
+                                            <Label>
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="{Binding timeinfo-BirthDate.Year}"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout  Orientation="Horizontal">
+                                        <ImageButton Source="edit.png" WidthRequest="25" HeightRequest="25" BackgroundColor="Transparent" CommandParameter="{Binding .}" Clicked="edit_Button_Clicked"></ImageButton>
+                                        <ImageButton x:Name="deleteButton" Source="delete.png" WidthRequest="25" HeightRequest="25" BackgroundColor="Transparent"  CommandParameter="{Binding .}" Clicked="delete_Button_Clicked"></ImageButton>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <StackLayout>
+            <Frame HasShadow="True" x:Name="miniWindow" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="300" HeightRequest="100" CornerRadius="20"
+                   Margin="0,0,0,20" IsVisible="false">
+                <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                    <Label VerticalTextAlignment="Center" FontSize="12" FontAttributes="Bold" Text="Eklenilecek hastanın TCKNO'su: "/>
+                    <Entry x:Name="YeniTC" WidthRequest="120" Placeholder="TCKNO..."/>
+                    <Button Text="Ekle" WidthRequest="58" Clicked="New_Patient"/>
+                </StackLayout>
+            </Frame>
+            <Frame HasShadow="True" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,0,10">
+                <Frame BackgroundColor="#009999"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   HeightRequest="25"
+                   WidthRequest="15"
+                   Margin="0,-30,0,-10"
+                   BorderColor="#007777"
+                   CornerRadius="80">
+                    <CI:CircleImage Source="https://cdn-icons-png.flaticon.com/512/3524/3524388.png" Aspect="AspectFit"/>
+                </Frame>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="AddPatientBut"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

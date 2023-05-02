@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RemindMe"
+             x:Class="RemindMe.DoctorFlyoutPageItem"
+             Title="DoctorFlyoutMenu">
+    <StackLayout>
+        <StackLayout.Background>
+            <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                <GradientStop Color="LightBlue" Offset="0"/>
+                <GradientStop Color="LightBlue" Offset="0.11"/>
+                <GradientStop Color="LightBlue" Offset="0.35"/>
+                <GradientStop Color="#3D7EFF" Offset="0.7"/>
+                <GradientStop Color="#0022CB" Offset="1"/>
+            </LinearGradientBrush>
+        </StackLayout.Background>
+        <ListView x:Name="DoctorFlyList" x:FieldModifier="public">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type local:FlyoutPageItems}">
+                    <local:FlyoutPageItems Title="Profilim" IconSource="home.png" TargetPage="{x:Type local:DoctorProfilePage}"/>
+                    <local:FlyoutPageItems Title="Hastalarım" IconSource="doctor.png" TargetPage="{x:Type local:DoctorMyPatientPage}"/>
+                    <local:FlyoutPageItems Title="Çıkış Yap" IconSource="logout.png" TargetPage="{x:Type local:RootPage}"/>
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" HeightRequest="100" Margin="15,0,0,0" Source="{Binding IconSource}"/>
+                            <Label Grid.Column="1" FontSize="20"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding Title}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            </ListView>
+    </StackLayout>
+</ContentPage>

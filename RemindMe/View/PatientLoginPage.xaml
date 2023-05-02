@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RemindMe.PatientLoginPage"
+             Title="Anasayfa">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="#C4FFCE">
+            <Frame BorderColor="AntiqueWhite">
+                <Label HorizontalTextAlignment="Center" Text="REMIND ME!!!" FontSize="25"/>
+            </Frame>
+            <Frame BorderColor="DarkGreen" CornerRadius="55" BackgroundColor="LightGreen" HorizontalOptions="Center" Margin="0,70,0,0">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Orientation="Vertical" Margin="0,10,0,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Image WidthRequest="40" Source="idcard.png"/>
+                        <Entry x:Name="idEntry" Keyboard="Numeric" WidthRequest="170" Placeholder="TCKNO gir..."/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Image WidthRequest="40" Source="key.png"/>
+                        <Entry IsPassword="True"  x:Name="passwordEntry" WidthRequest="170" Placeholder="Şifreni gir.."/>
+                        <ImageButton x:Name="gizBut" Source="view.png" BackgroundColor="Transparent" WidthRequest="35" CornerRadius="100" BorderWidth="2" HeightRequest="10" Clicked="Button_Clicked"/>
+                    </StackLayout>
+                    <Button CornerRadius="35" BorderWidth="2" BorderColor="Black" Text="Giriş Yap" Clicked="Button_Clicked_1"/>
+                    <Label Margin="0,10,0,0" TextDecorations="Underline" FontSize="17" HorizontalTextAlignment="Center" Text="Yeni hesap oluştur">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="OnTapGestureRecognizerTapped"
+                                />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

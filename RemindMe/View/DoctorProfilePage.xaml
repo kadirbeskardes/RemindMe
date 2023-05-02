@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RemindMe.DoctorProfilePage"
+                          xmlns:CI="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             Title="Profilim">
+    
+    <ContentPage.Content>
+        <StackLayout >
+            <StackLayout.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="#0022CB" Offset="0.05"/>
+                    <GradientStop Color="#3D7EFF" Offset="0.18"/>
+                    <GradientStop Color="LightBlue" Offset="0.35"/>
+                    <GradientStop Color="LightBlue" Offset="0.7"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </StackLayout.Background>
+            <Frame BackgroundColor="Transparent" HeightRequest="120">
+                <StackLayout Orientation="Horizontal">
+                    <CI:CircleImage Source="{Binding ImageURL}" Rotation="270" HeightRequest="150" WidthRequest="100" />
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                        <Label Text="{Binding Name}" TextColor="White" FontSize="Large" HorizontalTextAlignment="Center"/>
+                        <Label Text="{Binding TCKNO}" TextColor="White" FontSize="Large" HorizontalTextAlignment="Center"/>
+                        <Label Text="{Binding HospitalName}" FontSize="17" TextColor="White" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame Margin="20,100,20,0" BorderColor="DarkSeaGreen" CornerRadius="25" BackgroundColor="#E1F3FF">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center" >
+                    <Label FontSize="22" FontAttributes="Italic"  VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding CV}"></Label>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
