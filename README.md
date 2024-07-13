@@ -14,3 +14,17 @@ Teknolojiler: Android Studio, Firebase Real-Time Database, Firebase Storage
 Minimum Android Version: Android 4.4.87 (API Level 21)
 
 Target Android Verison: Android 12.0 (API Level 31)
+
+
+
+## Kurulum
+
+RemindMe'i kurmak ve çalıştırmak için aşağıdaki adımları izleyin:
+
+1. Bu depoyu klonlayın:
+    ```bash
+    git clone https://github.com/kadirbeskardes/RemindMe.git
+    ```
+2. Projeyi Visual Studio'da açın.
+3. Gerekli bağımlılıkları yükleyin.
+4. Projeyi derleyin ve çalıştırın.
