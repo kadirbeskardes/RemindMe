@@ -38,4 +38,5 @@ RemindMe'i kurmak ve çalıştırmak için aşağıdaki adımları izleyin:
       Install-Package Xamarin.Essentials -Version 1.7.3
       Install-Package Xamarin.Forms -Version 5.0.0.2515
       ```
-4. Projeyi derleyin ve çalıştırın.
+4. Google Firebase üzerinden oluşturduğunuz Firebase Realtime Database bağlantısını ve Firebase Storage bağlantısını projede gereken her yere ekleyin.
+5. Projeyi derleyin ve çalıştırın.
