@@ -26,5 +26,16 @@ RemindMe'i kurmak ve çalıştırmak için aşağıdaki adımları izleyin:
     git clone https://github.com/kadirbeskardes/RemindMe.git
     ```
 2. Projeyi Visual Studio'da açın.
-3. Gerekli bağımlılıkları yükleyin.
+3. Gerekli bağımlılıkları yükleyin(Bağımlılıklar zaten yüklüyse bu adımı kesinlikle atlamanız tavsiye edilir):
+    - NuGet Paket Yöneticisi Konsolu'nu açın ve aşağıdaki komutları çalıştırın:
+      ```powershell
+      Install-Package FirebaseDatabase.net -Version 4.2.0
+      Install-Package FirebaseStorage.net -Version 1.0.3
+      Install-Package Plugin.LocalNotification -Version 10.0.3
+      Install-Package Xam.Plugin.Media -Version 5.0.1
+      Install-Package Xam.Plugins.Forms.ImageCircle -Version 3.0.0.5
+      Install-Package Xamarin.CommunityToolkit -Version 2.0.5
+      Install-Package Xamarin.Essentials -Version 1.7.3
+      Install-Package Xamarin.Forms -Version 5.0.0.2515
+      ```
 4. Projeyi derleyin ve çalıştırın.
