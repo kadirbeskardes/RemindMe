@@ -1,42 +1,183 @@
-Bu projede, doktor-hasta etkileşimli bir ilaç hatırlatıcısı yapmak hedeflenmiştir. Alzheimer hastası kişiye, doktorun sisteme girdiği ilacı sisteme girilen saatte içmesine yardım edilmesi için yapılan bir uygulamadır. Alınması gereken ilaç için doktorun istediği saatte hastaya bildirim gidecektir. Hasta, bu ilacı içtiğine dair video kaydını doktora gönderebilecektir. 
+# 💊 RemindMe - İlaç Hatırlatıcı Uygulaması
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Xamarin.Forms-3498DB?style=for-the-badge&logo=xamarin&logoColor=white" alt="Xamarin.Forms"/>
+  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white" alt="C#"/>
+  <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android"/>
+  <img src="https://img.shields.io/badge/Healthcare-E91E63?style=for-the-badge" alt="Healthcare"/>
+</p>
 
-Bu proje, hasta kişinin kullanımında kişi ilaç saatlerinde hatırlatma bildirimi almasını sağlar. Bu ilacı aldığına dair video kaydını doktoruna gönderebilir. İlaçlarını ve bu ilaçları alması gereken saati görebilir. Doktoruna ait gerekli bilgileri görebilir. Doktor kişinin kullanımında ise doktor, sistemde başka bir doktor ile ilişiği bulunmayan hastayı kendi sistemine bağlayabilir. Kendi sistemine bağlı tüm hastaları listeleyebilir. Bu hastaların kullanması gereken ilaçları ve ilacı alması gereken saati hasta üzerinden sisteme girebilir. Doktor, hastalarının kendine gönderdiği video kayıtlarını izleyebilir.
+**RemindMe**, doktor-hasta etkileşimli bir ilaç hatırlatıcısı uygulamasıdır. Hastaların ilaçlarını zamanında almasını sağlamak ve doktorların hasta takibini kolaylaştırmak için tasarlanmıştır. 
 
-Dil: C# , XAML 
+## 📋 İçindekiler
 
-Kullanılan Derleyici: Visual Studio 
+- [Özellikler](#-özellikler)
+- [Kullanıcı Rolleri](#-kullanıcı-rolleri)
+- [Teknolojiler](#-teknolojiler)
+- [Kurulum](#-kurulum)
+- [Kullanım](#-kullanım)
+- [Katkıda Bulunma](#-katkıda-bulunma)
 
-Kütüphaneler: Xamarin Forms, .NET 
+## ✨ Özellikler
 
-Teknolojiler: Android Studio, Firebase Real-Time Database, Firebase Storage
+### 👨‍⚕️ Doktor Özellikleri
+- 📋 Hasta listesi görüntüleme ve yönetimi
+- 💊 İlaç reçetesi oluşturma ve düzenleme
+- ⏰ İlaç alma saatlerini belirleme
+- 📊 Hasta uyum raporlarını görüntüleme
+- 🔔 Kritik durumlar için bildirim alma
 
-Minimum Android Version: Android 4.4.87 (API Level 21)
+### 👤 Hasta Özellikleri
+- 💊 Günlük ilaç listesini görüntüleme
+- ⏰ İlaç alma hatırlatıcıları
+- ✅ İlaç alındı olarak işaretleme
+- 📅 İlaç geçmişini görüntüleme
+- 👨‍⚕️ Doktoruyla iletişim
 
-Target Android Verison: Android 12.0 (API Level 31)
+### 🔔 Bildirim Sistemi
+- Push notification ile hatırlatma
+- Tekrarlayan alarm desteği
+- Kaçırılan doz bildirimi
 
+## 👥 Kullanıcı Rolleri
 
+```
+┌─────────────────────────────────────────────────────────┐
+│                      RemindMe                           │
+├─────────────────────────┬───────────────────────────────┤
+│       DOKTOR            │           HASTA               │
+├─────────────────────────┼───────────────────────────────┤
+│ • Hasta kaydı           │ • İlaç listesi görüntüleme    │
+│ • Reçete yazma          │ • Hatırlatıcı alma            │
+│ • İlaç tanımlama        │ • İlaç onaylama               │
+│ • Rapor görüntüleme     │ • Geçmiş görüntüleme          │
+│ • Bildirim gönderme     │ • Doktora mesaj               │
+└─────────────────────────┴───────────────────────────────┘
+```
 
-## Kurulum
+## 🛠 Teknolojiler
 
-RemindMe'i kurmak ve çalıştırmak için aşağıdaki adımları izleyin:
+- **Xamarin.Forms** - Cross-platform mobil geliştirme
+- **C#** - Programlama dili
+- **SQLite** - Yerel veritabanı
+- **Local Notifications** - Bildirim sistemi
+- **MVVM Pattern** - Mimari pattern
 
-1. Bu depoyu klonlayın:
-    ```bash
-    git clone https://github.com/kadirbeskardes/RemindMe.git
-    ```
-2. Projeyi Visual Studio'da açın.
-3. Gerekli bağımlılıkları yükleyin(Bağımlılıklar zaten yüklüyse bu adımı kesinlikle atlamanız tavsiye edilir):
-    - NuGet Paket Yöneticisi Konsolu'nu açın ve aşağıdaki komutları çalıştırın:
-      ```powershell
-      Install-Package FirebaseDatabase.net -Version 4.2.0
-      Install-Package FirebaseStorage.net -Version 1.0.3
-      Install-Package Plugin.LocalNotification -Version 10.0.3
-      Install-Package Xam.Plugin.Media -Version 5.0.1
-      Install-Package Xam.Plugins.Forms.ImageCircle -Version 3.0.0.5
-      Install-Package Xamarin.CommunityToolkit -Version 2.0.5
-      Install-Package Xamarin.Essentials -Version 1.7.3
-      Install-Package Xamarin.Forms -Version 5.0.0.2515
-      ```
-4. Google Firebase üzerinden oluşturduğunuz Firebase Realtime Database bağlantısını ve Firebase Storage bağlantısını projede gereken her yere ekleyin.
-5. Projeyi derleyin ve çalıştırın.
+## 🚀 Kurulum
+
+### Gereksinimler
+- Visual Studio 2022 (Xamarin workload)
+- Android SDK 29+
+- . NET Standard 2.0
+
+### Adımlar
+
+```bash
+# Repository'yi klonlayın
+git clone https://github.com/kadirbeskardes/RemindMe.git
+cd RemindMe
+
+# Visual Studio ile açın ve derleyin
+# RemindMe.sln dosyasını açın
+```
+
+## 📁 Proje Yapısı
+
+```
+RemindMe/
+├── RemindMe/                      # Shared Xamarin. Forms projesi
+│   ├── Models/                    # Veri modelleri
+│   │   ├── User.cs               # Kullanıcı (Doktor/Hasta)
+│   │   ├── Medicine.cs           # İlaç modeli
+│   │   ├── Prescription.cs       # Reçete modeli
+│   │   └── Reminder.cs           # Hatırlatıcı modeli
+│   ├── Views/                     # XAML sayfaları
+│   │   ├── LoginPage.xaml
+│   │   ├── DoctorDashboard.xaml
+│   │   ├── PatientDashboard.xaml
+│   │   ├── MedicineListPage.xaml
+│   │   └── AddMedicinePage.xaml
+│   ├── ViewModels/                # ViewModel sınıfları
+│   └── Services/                  # Servis katmanı
+│       ├── NotificationService.cs
+│       └── DatabaseService.cs
+├── RemindMe.Android/              # Android platforma özgü kod
+│   ├── MainActivity.cs
+│   └── NotificationHelper.cs
+└── RemindMe.sln
+```
+
+## 📱 Kullanım Akışı
+
+### Doktor Akışı
+```
+1. Giriş Yap (Doktor hesabı)
+         │
+         ▼
+2. Dashboard görüntüle
+         │
+         ▼
+3. Hasta seç veya ekle
+         │
+         ▼
+4. Reçete oluştur
+   • İlaç adı
+   • Doz miktarı
+   • Alma saatleri
+   • Süre
+         │
+         ▼
+5. Hasta takibi
+```
+
+### Hasta Akışı
+```
+1. Giriş Yap (Hasta hesabı)
+         │
+         ▼
+2. Günlük ilaç listesi
+         │
+         ▼
+3. Hatırlatıcı al ⏰
+         │
+         ▼
+4. İlaç aldım ✅
+         │
+         ▼
+5. Geçmiş görüntüle
+```
+
+## 🔔 Bildirim Yapılandırması
+
+```csharp
+// Örnek bildirim ayarı
+var notification = new LocalNotification
+{
+    Title = "İlaç Zamanı! ",
+    Body = "Aspirin - 1 tablet almanız gerekiyor",
+    NotifyTime = DateTime.Now.AddHours(8),
+    RepeatInterval = TimeSpan.FromHours(12)
+};
+```
+
+## 🤝 Katkıda Bulunma
+
+1. Fork edin
+2. Feature branch oluşturun (`git checkout -b feature/NewFeature`)
+3. Commit edin (`git commit -m 'Add NewFeature'`)
+4. Push edin (`git push origin feature/NewFeature`)
+5. Pull Request açın
+
+## ⚠️ Sorumluluk Reddi
+
+Bu uygulama yalnızca hatırlatma amaçlıdır ve tıbbi tavsiye niteliği taşımaz. İlaç kullanımı konusunda her zaman doktorunuza danışın.
+
+## 📄 Lisans
+
+MIT License
+
+---
+
+<p align="center">
+  💊 <strong>RemindMe</strong> - Sağlığınız için doğru zamanda, doğru ilaç! 
+</p>
